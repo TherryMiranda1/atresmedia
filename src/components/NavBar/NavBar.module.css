@@ -31,10 +31,12 @@
   .navbarChannels {
     width: 100vw;
     gap: 10px;
+    height: 60px;
     padding: 0 0px;
   }
   .navbar img {
     width: 14vw;
+    max-width: 50px;
     border-radius: 10px;
     filter: brightness(70%);
     transition: all 0.2s ease-in-out;
