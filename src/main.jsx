@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Router } from "react-router-dom";
 import App from "./App";
 import "./index.css";
-import { SiteContainer } from "./state/siteContext";
+import { SiteContainer } from "./state/SiteContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
