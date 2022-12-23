@@ -3,7 +3,7 @@ import { channels } from "../../static/data";
 import styles from "./NavBar.module.css";
 import plus from "../../assets/icons/plus-svgrepo-com.svg";
 import { useNavigate } from "react-router-dom";
-import { useSites } from "../../state/siteContext";
+import { useSites } from "../../state/SiteContext";
 
 function NavBar() {
   const { setFilter } = useSites();
