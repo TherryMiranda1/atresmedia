@@ -34,10 +34,8 @@
     height: 60px;
     padding: 0 0px;
   }
-  .navbar img {
-    width: 14vw;
-    max-width: 50px;
-    border-radius: 10px;
+  .navbarChannels img {
+    width: 50px;
     filter: brightness(70%);
     transition: all 0.2s ease-in-out;
     cursor: pointer;
