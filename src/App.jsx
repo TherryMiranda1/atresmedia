@@ -2,7 +2,7 @@ import "./App.css";
 import { SitesList } from "./components/Sites/SitesList";
 import { Form } from "./components/Form/Form";
 import { useEffect } from "react";
-import { useSites } from "./state/siteContext";
+import { useSites } from "./state/SiteContext";
 import NavBar from "./components/NavBar/NavBar";
 import { Route, Routes } from "react-router-dom";
 import { SingleSite } from "./components/SingleSite/SingleSite";
