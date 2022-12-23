@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useSites } from "../../state/siteContext";
+import { useSites } from "../../state/SiteContext";
 import { form } from "../../static/data";
 import { isValidUrl } from "../../tools/validateUrl";
 import MultiForm from "../MultiUses/MultiForm";
