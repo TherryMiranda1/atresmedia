@@ -1,7 +1,7 @@
 .navbar {
   position: fixed;
   background-color:#040504;
-  width: 100%;
+  width: 100vw;
   height: 50px;
   display: flex;
   justify-content: space-around;
@@ -11,7 +11,7 @@
 .navbarChannels {
   background-color:#040504;
   padding: 0 20px;
-  height: 50px;
+  min-height: 50px;
   width: 70vw;
   display: flex;
   justify-content: space-around;
@@ -31,7 +31,7 @@
   .navbarChannels {
     width: 100vw;
     gap: 10px;
-    height: 60px;
+    min-height: 60px;
     padding: 0 0px;
   }
   .navbarChannels img {
