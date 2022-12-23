@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import toast from "react-hot-toast";
 
 import styles from "./SingleSite.module.css";
-import { useSites } from "../../state/siteContext";
+import { useSites } from "../../state/SiteContext";
 import { form } from "../../static/data";
 import MultiForm from "../MultiUses/MultiForm";
 import { useNavigate } from "react-router-dom";
