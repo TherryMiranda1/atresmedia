@@ -2,7 +2,7 @@ import { getDefaultNormalizer } from "@testing-library/react";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useSites } from "../../state/siteContext";
+import { useSites } from "../../state/SiteContext";
 import SiteItem from "./SiteItem";
 import styles from "./Sites.module.css";
 
