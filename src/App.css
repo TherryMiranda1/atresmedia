@@ -1,0 +1,19 @@
+.AppBlack {
+  justify-content: center;
+
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+  background: #050405;
+  color: #ffffff;
+}
+
+.AppWhite {
+  width: 100vw;
+  height: 100vh;
+  background: #ffffff;
+  color: #3f3f3f;
+}
+.main {
+  padding-top: 100px;
+}

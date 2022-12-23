@@ -1,0 +1,49 @@
+.siteList {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.site {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: 20px;
+  width: 200px;
+  height: 200px;
+  flex-direction: column;
+  box-shadow: 0 0 5px #530101;
+  /* box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff; */
+}
+.site img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.buttonsSection {
+  padding: 5px;
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+}
+.button {
+  border: none;
+  font-size: 0.8rem;
+  background: #ff0026;
+  padding: 5px;
+  color: #ffffff;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.button:hover {
+  scale: 1.1;
+  transition: all 0.2s ease-in-out;
+}

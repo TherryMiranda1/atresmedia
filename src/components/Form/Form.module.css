@@ -1,0 +1,73 @@
+.forms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #ffffff;
+  min-height: 80vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 100px;
+}
+.forms h4 {
+  padding: 20px;
+  border-radius: 12px;
+  font-size: larger;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  gap: 30px;
+  max-width: 95vw;
+  color: #302b63;
+  border-radius: 12px;
+}
+
+.formCall {
+  display: block;
+  background: #ff0026;
+  box-shadow: 1px 2px 5px 0px rgba(87, 87, 87, 0.8);
+  padding: 8px 28px;
+  color: #ffff;
+  font-size: medium;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.formCall:hover {
+  scale: 1.1;
+  transition: all 0.2s ease-in-out;
+}
+.formInputs {
+  display: flex;
+  flex-direction: column;
+  background-color: #040504;
+  width: 90vw;
+  max-width: 300px;
+  box-shadow: 1px 2px 5px 0px rgba(87, 87, 87, 0.563);
+  color: #747474;
+  padding: 15px;
+}
+
+.loader {
+  padding-top: 20vh;
+}
+
+.policiesAccept {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.error {
+  font-size: 1em;
+  color: #ff0026;
+  font-weight: 500;
+}
