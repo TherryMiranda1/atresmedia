@@ -6,8 +6,6 @@ _A3Sites_
 
 _Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
 
-Mira **Deployment** para conocer como desplegar el proyecto.
-
 
 ### Detalles 📋
 
@@ -24,19 +22,19 @@ git clone https://github.com/TherryMiranda1/atresmedia.git
 
 _2 instala las dependencias_
 ```
-npm i
+pnpm i
 ```
 
 _3 ejecuta los test_
 
 ```
-npm run test
+pnpm run test
 ```
 
 _4 inicia el proyecto_
 
 ```
-npm run dev
+pnpm run dev
 ```
 
 
@@ -67,10 +65,6 @@ _Menciona las herramientas que utilizaste para crear tu proyecto_
 * [React](https://es.reactjs.org/) - Framework de JavaScript
 * [Redux](https://es.redux.js.org//) - Manejador de estado
 * [Vite](https://vitejs.dev/) - Herramienta de compilacion
-
-## Contribuyendo 🖇️
-
-Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
 
 ## Mas 📖
 
