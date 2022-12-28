@@ -28,7 +28,7 @@ export const SingleSite = () => {
     e.preventDefault();
     if (isValidUrl(site?.path) && site.path && site.publicPath && site.name) {
       dispatch(updateSite(id, site));
-      
+
       if (!error) {
         navigate("/");
         toast.dismiss(t.id);
@@ -63,7 +63,7 @@ export const SingleSite = () => {
       ),
       {
         duration: 600000,
-        style: { backgroundColor: "#040504", marginTop: 100 },
+        style: { backgroundColor: "#040504", marginTop: 50 },
       }
     );
   };
