@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { isValidUrl } from "../../tools/validateUrl";
 
 const initialState = {
   sites: [],
@@ -17,7 +18,10 @@ export const allSitesSlice = createSlice({
       state.loading = action.payload;
     },
     updateSitesByGet: (state, action) => {
-      state.sites = action.payload;
+      state.sites = action.payload.filter((site) =>
+        isValidUrl(site.publicPath)
+      );
+
       state.draft = action.payload;
       state.loading = false;
     },

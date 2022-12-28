@@ -11,10 +11,11 @@ import { updateSite, getSite } from "../../services/sitesProvider";
 import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./SingleSite.module.css";
+import Loading from "../sharedViews/Loading";
 
 export const SingleSite = () => {
   const [formError, setFormError] = useState(null);
-  const { siteDetails } = useSelector((state) => state.allSites);
+  const { siteDetails, loading } = useSelector((state) => state.allSites);
 
   const params = useParams();
   const navigate = useNavigate();
@@ -50,7 +51,6 @@ export const SingleSite = () => {
           >
             <h3>← Volver</h3>
           </button>
-
           <MultiForm
             styles={styles}
             handleSubmit={handleSubmit}
@@ -64,11 +64,11 @@ export const SingleSite = () => {
       ),
       {
         duration: 600000,
-        position: "top-center",
         style: { backgroundColor: "#040504", marginTop: 100 },
       }
     );
   };
+
   useEffect(() => {
     (async () => {
       if (params.id) {
@@ -76,29 +76,31 @@ export const SingleSite = () => {
       }
     })();
   }, [dispatch]);
-  return (
-    <section className={styles.site}>
-      <h4>{siteDetails.name}</h4>
-      <p>
-        {new Date(siteDetails.createDate).toLocaleString("es-ES", {
-          month: "long",
-          year: "numeric",
-        })}
-      </p>
-      <p>{siteDetails.description}</p>
+  return (<>{
+    loading?<Loading/>:<section className={styles.site}>
+    <h4>{siteDetails.name}</h4>
+    <p>
+      {new Date(siteDetails.createDate).toLocaleString("es-ES", {
+        month: "long",
+        year: "numeric",
+      })}
+    </p>
+    <p>{siteDetails.description}</p>
 
-      <p> key: {siteDetails.key}</p>
-      <section className={styles.buttonsSection}>
-        <button
-          className={styles.button}
-          onClick={() => handleEdit(siteDetails)}
-        >
-          Editar
-        </button>
-        <a href={siteDetails.path} target="_blank" className={styles.button}>
-          Visitar
-        </a>
-      </section>
+    <p> key: {siteDetails.key}</p>
+    <section className={styles.buttonsSection}>
+      <button
+        className={styles.button}
+        onClick={() => handleEdit(siteDetails)}
+      >
+        Editar
+      </button>
+      <a href={siteDetails.path} target="_blank" className={styles.button}>
+        Visitar
+      </a>
     </section>
+  </section>
+  }</>
+    
   );
 };
