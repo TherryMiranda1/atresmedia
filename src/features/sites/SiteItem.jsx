@@ -1,11 +1,13 @@
 import React from "react";
-import styles from "./Sites.module.css";
+
 import { useNavigate } from "react-router-dom";
+
+import styles from "./Sites.module.css";
 
 function CardItem({ site }) {
   const { name, createDate, path } = site;
   const navigate = useNavigate();
-  
+
   return (
     <section className={styles.site}>
       <h4>{name}</h4>
@@ -22,14 +24,11 @@ function CardItem({ site }) {
         >
           Saber mas
         </button>
-        <button
-          className={styles.button}
-        >
-          <a className={styles.button} href={path} target="_blank" >
-          Visitar
-        </a>
+        <button className={styles.button}>
+          <a className={styles.button} href={path} target="_blank">
+            Visitar
+          </a>
         </button>
-        
       </section>
     </section>
   );

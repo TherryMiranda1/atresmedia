@@ -3,16 +3,20 @@ import { channels } from "../../static/data";
 import styles from "./NavBar.module.css";
 import plus from "../../assets/icons/plus-svgrepo-com.svg";
 import { useNavigate } from "react-router-dom";
-import { useSites } from "../../state/siteContext";
 
-function NavBar() {
-  const { setFilter } = useSites();
+import { setFilter } from "../../services/sitesProvider";
+import { useDispatch,} from "react-redux";
+
+export const NavBar = () => {
+
+  const dispatch = useDispatch();
+
   const navigate = useNavigate();
   return (
     <div className={styles.navbar}>
       <img
         onClick={() => {
-          setFilter("");
+          dispatch(setFilter(""));
           navigate(`/`);
         }}
         alt={channels[0]?.title}
@@ -24,7 +28,7 @@ function NavBar() {
           <img
             onClick={() => {
               navigate(`/`);
-              setFilter(channel.title);
+              dispatch(setFilter(channel.title));
             }}
             alt={channel.title}
             src={channel.image}
@@ -40,6 +44,4 @@ function NavBar() {
       />
     </div>
   );
-}
-
-export default NavBar;
+};

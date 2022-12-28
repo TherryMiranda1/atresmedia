@@ -10,11 +10,15 @@
     "test": "jest --watchAll"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.1",
     "axios": "^1.2.1",
+    "csstype": "^3.0.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.0",
-    "react-router-dom": "^6.6.0"
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.6.0",
+    "react-spinners": "^0.13.7"
   },
   "devDependencies": {
     "@babel/core": "7.20.2",

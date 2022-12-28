@@ -1,30 +1,14 @@
-
-
-.siteList {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
 .site {
   display: flex;
   gap: 6px;
   align-items: center;
   justify-content: center;
-  padding: 30px;
+  padding: 10px;
   margin: 20px;
-  width: 90vw;
+  width: 70vw;
   max-width: 1000px;
   flex-direction: column;
   box-shadow: 0 0 5px #530101;
-  /* box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff; */
-}
-.site img {
-  width: 200px;
-  height: 200px;
-  border-radius: 10px;
 }
 
 .buttonsSection {
@@ -49,6 +33,15 @@
   transition: all 0.2s ease-in-out;
 }
 
+.formContainer {
+  display: flex;
+  color: #c6c6c6;
+  flex-direction: column;
+  width: 100vw;
+  justify-content: center;
+  font-weight: bold;
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -56,15 +49,13 @@
   justify-content: center;
   padding: 10px;
   gap: 30px;
-  max-width: 95vw;
-  color: #302b63;
+  color: #c6c6c6;
   border-radius: 12px;
 }
 
 .formCall {
   display: block;
   background: #ff0026;
-  box-shadow: 1px 2px 5px 0px rgba(87, 87, 87, 0.8);
   padding: 8px 28px;
   color: #ffff;
   font-size: medium;
@@ -81,10 +72,9 @@
   display: flex;
   flex-direction: column;
   background-color: #040504;
-  width: 90vw;
-  max-width: 300px;
-  box-shadow: 1px 2px 5px 0px rgba(87, 87, 87, 0.563);
-  color: #747474;
+  width: 200px;
+  max-width: 70vw;
+  color: #c6c6c6;
   padding: 15px;
 }
 

@@ -1,28 +1,21 @@
 import "./App.css";
-import { SitesList } from "./components/Sites/SitesList";
-import { Form } from "./components/Form/Form";
-import { useEffect } from "react";
-import { useSites } from "./state/siteContext";
-import NavBar from "./components/NavBar/NavBar";
+import { SitesList } from "./features/sites/SitesList";
+import { NewSite } from "./features/admin/NewSite";
+import { NavBar } from "./features/navBar/NavBar";
 import { Route, Routes } from "react-router-dom";
-import { SingleSite } from "./components/SingleSite/SingleSite";
-import { Toaster } from "react-hot-toast";  
+import { SingleSite } from "./features/singleSite/SingleSite";
+import { Toaster } from "react-hot-toast";
 
 function App() {
-  const { getSites } = useSites();
-
-  useEffect(() => {
-    getSites();
-  }, []);
-
   return (
     <div className="AppBlack">
       <NavBar />
       <main className="main">
         <Routes>
           <Route path="/" element={<SitesList />} />
-          <Route path="/new-site" element={<Form />} />
+          <Route path="/new-site" element={<NewSite />} />
           <Route path="/sites/:id" element={<SingleSite />} />
+          <Route path="*" element={<p>No se ha encontrado esta ruta</p>} />
         </Routes>
       </main>
       <Toaster />
