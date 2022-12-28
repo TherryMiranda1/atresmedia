@@ -10,6 +10,7 @@ function CardItem({ site }) {
 
   return (
     <section className={styles.site}>
+      {site.image ? <img className={styles.siteImg} alt={name} src={site.image}></img> : null}
       <h4>{name}</h4>
       <p>
         {new Date(createDate).toLocaleString("es-ES", {

@@ -34,7 +34,7 @@ export const channels = [
   },
   {
     id: "_06",
-    title: 'mega',
+    title: "mega",
     image: mega,
   },
   {
@@ -47,7 +47,7 @@ export const channels = [
 export const form = {
   id: 6,
   type: "text",
-  options: [
+  questions: [
     {
       title: "Name",
       value: "name",

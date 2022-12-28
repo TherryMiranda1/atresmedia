@@ -15,7 +15,9 @@ import Loading from "../sharedViews/Loading";
 
 export const SingleSite = () => {
   const [formError, setFormError] = useState(null);
-  const { siteDetails, loading } = useSelector((state) => state.allSites);
+  const { siteDetails, loading, error } = useSelector(
+    (state) => state.allSites
+  );
 
   const params = useParams();
   const navigate = useNavigate();
@@ -24,15 +26,12 @@ export const SingleSite = () => {
 
   const handleSubmit = async (e, site, id, t) => {
     e.preventDefault();
-
-    console.log(site);
     if (isValidUrl(site?.path) && site.path && site.publicPath && site.name) {
-      try {
-        dispatch(updateSite(id, site));
+      dispatch(updateSite(id, site));
+      
+      if (!error) {
         navigate("/");
         toast.dismiss(t.id);
-      } catch (error) {
-        console.log(error);
       }
     } else {
       setFormError(
@@ -76,31 +75,39 @@ export const SingleSite = () => {
       }
     })();
   }, [dispatch]);
-  return (<>{
-    loading?<Loading/>:<section className={styles.site}>
-    <h4>{siteDetails.name}</h4>
-    <p>
-      {new Date(siteDetails.createDate).toLocaleString("es-ES", {
-        month: "long",
-        year: "numeric",
-      })}
-    </p>
-    <p>{siteDetails.description}</p>
+  return (
+    <>
+      {loading ? (
+        <Loading />
+      ) : (
+        <section className={styles.site}>
+          <h4>{siteDetails.name}</h4>
+          <p>
+            {new Date(siteDetails.createDate).toLocaleString("es-ES", {
+              month: "long",
+              year: "numeric",
+            })}
+          </p>
+          <p>{siteDetails.description}</p>
 
-    <p> key: {siteDetails.key}</p>
-    <section className={styles.buttonsSection}>
-      <button
-        className={styles.button}
-        onClick={() => handleEdit(siteDetails)}
-      >
-        Editar
-      </button>
-      <a href={siteDetails.path} target="_blank" className={styles.button}>
-        Visitar
-      </a>
-    </section>
-  </section>
-  }</>
-    
+          <p> key: {siteDetails.key}</p>
+          <section className={styles.buttonsSection}>
+            <button
+              className={styles.button}
+              onClick={() => handleEdit(siteDetails)}
+            >
+              Editar
+            </button>
+            <a
+              href={siteDetails.path}
+              target="_blank"
+              className={styles.button}
+            >
+              Visitar
+            </a>
+          </section>
+        </section>
+      )}
+    </>
   );
 };

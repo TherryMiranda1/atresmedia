@@ -1,6 +1,6 @@
 .site {
   display: flex;
-  gap: 6px;
+  gap: 16px;
   align-items: center;
   justify-content: center;
   padding: 10px;
@@ -48,7 +48,7 @@
   align-items: center;
   justify-content: center;
   padding: 10px;
-  gap: 30px;
+  gap: 20px;
   color: #c6c6c6;
   border-radius: 12px;
 }
@@ -56,6 +56,7 @@
 .formCall {
   display: block;
   background: #ff0026;
+
   padding: 8px 28px;
   color: #ffff;
   font-size: medium;
@@ -71,6 +72,7 @@
 .formInputs {
   display: flex;
   flex-direction: column;
+  margin: 5px 0;
   background-color: #040504;
   width: 200px;
   max-width: 70vw;
@@ -78,12 +80,13 @@
   padding: 15px;
 }
 
-.loader {
-  padding-top: 20vh;
-}
-
 .error {
   font-size: 1em;
   color: #ff0026;
   font-weight: 500;
+}
+
+.warring {
+  font-size: small;
+  font-weight: 200;
 }

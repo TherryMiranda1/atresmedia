@@ -19,9 +19,10 @@ export const getAllSites = () => async (dispatch) => {
     method: "GET",
     dispatch,
   });
-  console.log(response);
 
-  dispatch(updateSitesByGet(response));
+  if (response) dispatch(updateSitesByGet(response));
+
+  dispatch(setLoading(false));
 };
 
 //Crear un nuevo sitio
@@ -33,9 +34,10 @@ export const createSite = (newSite) => async (dispatch) => {
     body: JSON.stringify(newSite),
     dispatch,
   });
-  console.log(response);
 
-  dispatch(updateSitesByPost(response));
+  if (response) dispatch(updateSitesByPost(response));
+
+  dispatch(setLoading(false));
 };
 
 //Editar un sitio
@@ -47,9 +49,10 @@ export const updateSite = (id, newSite) => async (dispatch) => {
     body: JSON.stringify(newSite),
     dispatch,
   });
-  console.log(response);
 
-  dispatch(updateSitesByEdit({ site: response, id }));
+  if (response) dispatch(updateSitesByEdit({ site: response, id }));
+
+  dispatch(setLoading(false));
 };
 
 export const getSite = (id) => async (dispatch) => {
@@ -59,9 +62,10 @@ export const getSite = (id) => async (dispatch) => {
     method: "GET",
     dispatch,
   });
-  console.log(response);
 
-  dispatch(setSiteDetails(response));
+  if (response) dispatch(setSiteDetails(response));
+
+  dispatch(setLoading(false));
 };
 
 export const deleteSite = (id) => async (dispatch) => {
@@ -71,7 +75,8 @@ export const deleteSite = (id) => async (dispatch) => {
     method: "DELETE",
     dispatch,
   });
-  console.log(response);
 
-  dispatch(updateSitesByDelete(id));
+  if (response) dispatch(updateSitesByDelete(id));
+
+  dispatch(setLoading(false));
 };

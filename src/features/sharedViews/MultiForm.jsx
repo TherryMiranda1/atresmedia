@@ -11,7 +11,7 @@ const MultiForm = ({
   site: prevSite,
   title,
   buttonLabel,
-  t
+  t,
 }) => {
   const [site, setSite] = useState(prevSite || {});
 
@@ -20,20 +20,30 @@ const MultiForm = ({
   return (
     <form className={styles.form}>
       <h4>{title}</h4>
-      {form.options.map((option, i) => (
-        <input
-          key={option.value}
-          className={styles.formInputs}
-          type="text"
-          required={option.required}
-          placeholder={option.title}
-          value={prevSite && site[option.value]}
-          name={option.value}
-          onChange={(e) => setSite({ ...site, [option.value]: e.target.value })}
-        />
+      {form.questions.map((question, i) => (
+        <section className={styles.questions} key={question.value}>
+          {t ? <label>{question.title}</label> : null}
+          <input
+            className={styles.formInputs}
+            type="text"
+            required={question.required}
+            placeholder={question.title}
+            value={prevSite && site[question.value]}
+            name={question.value}
+            onChange={(e) =>
+              setSite({ ...site, [question.value]: e.target.value })
+            }
+          />
+        </section>
       ))}
       <h3 className={styles.error}>{formError ? formError : null}</h3>
       <h3 className={styles.error}>{error ? error : null}</h3>
+      {t ? (
+        <p className={styles.warring}>
+          * Todos los campos son requeridos, el path debe ser una url valida y
+          no se admiten nombres repetidos
+        </p>
+      ) : null}
       {loading ? (
         <DotLoader color="#ff0026" />
       ) : (

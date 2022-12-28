@@ -15,14 +15,14 @@
   padding: 10px;
   margin: 20px;
   width: 200px;
-  height: 200px;
+  height: 300px;
   flex-direction: column;
   box-shadow: 0 0 5px #530101;
   /* box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff; */
 }
-.site img {
-  width: 200px;
-  height: 200px;
+.siteImg {
+  width: 150px;
+  height: 150px;
   border-radius: 10px;
 }
 

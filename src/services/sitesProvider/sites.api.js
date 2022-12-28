@@ -12,11 +12,20 @@ export const doApiCall = async ({ url, method, body, dispatch }) => {
     if (response.ok) {
       return await response.json();
     } else {
-      dispatch(setError(response.statusText));
-      console.error(response);
+      dispatch(
+        setError(
+          `${response.statusText} - Recuerda que el campo name debe ser unico y que todos los campos son requeridos`
+        )
+      );
+      return;
     }
   } catch (e) {
     console.error(e);
+    dispatch(
+      setError(
+        "no se ha podido realizar esta accion, por favor intentalo mas tarde"
+      )
+    );
     throw e;
   }
 };

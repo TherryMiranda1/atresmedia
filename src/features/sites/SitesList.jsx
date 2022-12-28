@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllSites } from "../../services/sitesProvider";
 import Loading from "../sharedViews/Loading";
+import { decorateSite } from "../../tools/decorateSite";
 
 import SiteItem from "./SiteItem";
 
@@ -16,12 +17,13 @@ export const SitesList = () => {
     dispatch(getAllSites());
   }, [dispatch]);
 
-  if (error)
+  if (!sites)
     return (
       <h3>
-        No hemos podido conectar con el servidor. Por favor intentalo mas tarde
+        Parece que aun no hay sitios registrados
       </h3>
     );
+    console.log(decorateSite(sites))
 
   return (
     <section className={styles.siteList}>
@@ -29,7 +31,7 @@ export const SitesList = () => {
         <Loading />
       ) : (
         <>
-          {sites?.map((site) => {
+          {decorateSite(sites)?.map((site) => {
             return <SiteItem site={site} key={site._id} />;
           })}
         </>
